@@ -4,7 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+/**
+ * 
+ * @author Hithashree C S
+ * 
+ * Contains AddMedicalHistoryPage elements & business lib
+ *
+ */  
 public class Doctor_DashboardPage {
 @FindBy(xpath ="//div[@class='panel-body']/descendant::a[@href='edit-profile.php']")
 private WebElement  updateprofilelink;

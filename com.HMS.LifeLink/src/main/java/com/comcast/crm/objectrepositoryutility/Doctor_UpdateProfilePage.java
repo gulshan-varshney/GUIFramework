@@ -11,7 +11,13 @@ import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-
+/**
+ * 
+ * @author Hithashree C S
+ * 
+ * Contains AddMedicalHistoryPage elements & business lib
+ *
+ */  
 public class Doctor_UpdateProfilePage  extends WebDriverUtility{
 
 	@FindBy(xpath = "//textarea[@class='form-control']")

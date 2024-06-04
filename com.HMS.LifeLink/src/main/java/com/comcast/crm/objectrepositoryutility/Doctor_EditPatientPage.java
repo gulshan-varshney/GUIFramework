@@ -8,7 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
-
+/**
+ * 
+ * @author Hithashree C S
+ * 
+ * Contains AddMedicalHistoryPage elements & business lib
+ *
+ */  
 public class Doctor_EditPatientPage {
 	@FindBy(xpath = "//input[@name='patname']")
 	private WebElement patname;
