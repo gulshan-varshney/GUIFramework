@@ -6,13 +6,23 @@ import generic.basetest.BaseClass;
 import objectRepositoryUtility.AddDoctorPage;
 import objectRepositoryUtility.AdminLoginPage;
 import objectRepositoryUtility.AdminPage;
-import objectRepositoryUtility.ManageDoctorPage;
+import objectRepositoryUtility.EditDoctorPage;
 
-public class DeleteDoctorTest extends BaseClass {
+/**
+ * 
+ * @author gulshan
+ *
+ */
+public class EditDoctorTest extends BaseClass {
 
+	/**
+	 * test script for edit doctor's details
+	 * 
+	 * @throws Throwable
+	 */
 	@Test
-	public void deleteDoctor() throws Throwable {
-		
+	public void editDoctorDetails() throws Throwable {
+
 		AdminLoginPage alp = new AdminLoginPage(driver);
 		alp.loginToapp();
 		AdminPage ap = new AdminPage(driver);
@@ -20,11 +30,9 @@ public class DeleteDoctorTest extends BaseClass {
 		ap.getAddDoctorLink().click();
 		AddDoctorPage adp = new AddDoctorPage(driver);
 		adp.addDoctor();
-		
-		Thread.sleep(2000);
-		ManageDoctorPage mdp = new ManageDoctorPage(driver);
-		mdp.deleteDoc();
-		
+
+		EditDoctorPage edp = new EditDoctorPage(driver);
+		edp.editDoctor();
 		ap.logout();
 	}
 }

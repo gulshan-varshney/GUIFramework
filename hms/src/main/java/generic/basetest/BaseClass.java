@@ -21,7 +21,11 @@ import generic.webdriverutility.UtilityClassObject;
 import generic.webdriverutility.WebDriverUtility;
 import objectRepositoryUtility.AdminLoginPage;
 import objectRepositoryUtility.AdminPage;
-
+/**
+ * 
+ * @author gulsh
+ *
+ */
 public class BaseClass implements IconstantPath {
 	/* Create Object */
 	public DataBaseUtility dbLib = new DataBaseUtility();
@@ -70,8 +74,6 @@ public class BaseClass implements IconstantPath {
 	@AfterMethod(groups = { "smokeTest", "regressionTest" })
 	public void configAM() {
 		System.out.println("=logout=");
-		AdminPage ap = new AdminPage(driver);
-		ap.logout();
 	}
 
 	@AfterClass(groups = { "smokeTest", "regressionTest" })

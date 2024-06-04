@@ -1,4 +1,4 @@
-package hms.admin.testScripts;
+package endToEnd_Scripts;
 
 import org.testng.annotations.Test;
 
@@ -6,11 +6,13 @@ import generic.basetest.BaseClass;
 import objectRepositoryUtility.AddDoctorPage;
 import objectRepositoryUtility.AdminLoginPage;
 import objectRepositoryUtility.AdminPage;
+import objectRepositoryUtility.DoctorLoginPage;
 
-public class AddDoctorTest extends BaseClass {
+public class AddDoctorAndVerifyDoctorLogin extends BaseClass {
 
 	@Test
-	public void addDoctors() throws Throwable {
+	public void verifyDoctorLogin() throws Throwable {
+
 		AdminLoginPage alp = new AdminLoginPage(driver);
 		alp.loginToapp();
 
@@ -19,5 +21,9 @@ public class AddDoctorTest extends BaseClass {
 		
 		AdminPage ap = new AdminPage(driver);
 		ap.logout();
+		
+		DoctorLoginPage dlp = new DoctorLoginPage(driver);
+		dlp.doctorLogin();
 	}
+
 }

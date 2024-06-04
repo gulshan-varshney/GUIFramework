@@ -13,12 +13,12 @@ public class Add_specialization_and_verifyTest extends BaseClass {
 	public void addSpecialization() throws Throwable {
 		AdminLoginPage alp = new AdminLoginPage(driver);
 		alp.loginToapp();
-		AdminPage ap = new AdminPage(driver);
-		ap.getDoctorDD().click();
-		ap.getDoctorSpecializationLink().click();
 
 		AddDoctorSpecializationPage asp = new AddDoctorSpecializationPage(driver);
 		asp.addDoctorSpecialization();
+		
+		AdminPage ap = new AdminPage(driver);
+		ap.logout();
 
 	}
 }

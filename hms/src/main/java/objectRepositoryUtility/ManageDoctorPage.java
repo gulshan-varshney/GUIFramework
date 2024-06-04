@@ -10,7 +10,12 @@ import org.testng.Reporter;
 
 import generic.fileutility.ExcelUtility;
 import generic.webdriverutility.WebDriverUtility;
-
+/**
+ * 
+ * @author gulshan
+ *
+ *this POM class contains web elements of Manage Doctor Page
+ */
 public class ManageDoctorPage {
 
 	WebDriver driver;
@@ -24,9 +29,8 @@ public class ManageDoctorPage {
 	
 	public void deleteDoc() throws Throwable {
 		ExcelUtility eLib = new ExcelUtility();
-		String speciazation = eLib.getDataFromExcel("specialization", 1, 0);
-	    String time = driver.findElement(By.xpath("//td[text()='"+speciazation+"']/following-sibling::td[2]")).getText();
-		driver.findElement(By.xpath("//td[contains(text(),'"+time+"')]/following-sibling::td//a[2]")).click();
+		String docNmae = eLib.getDataFromExcel("addDoctor", 1, 0);
+		driver.findElement(By.xpath("//td[text()='"+docNmae+"']//following-sibling::td[2]//a[2]")).click();
 		WebDriverUtility wLib = new WebDriverUtility();
 		wLib.switchtoAlertAndAccept(driver);
 		
@@ -35,6 +39,5 @@ public class ManageDoctorPage {
 		Reporter.log("data deleted successfully",true);
 		
 	}
-	
 	
 }
