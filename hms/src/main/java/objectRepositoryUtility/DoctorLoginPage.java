@@ -42,8 +42,7 @@ public class DoctorLoginPage {
 		HomePage hp = new HomePage(driver);
 		hp.getDoctorLoginBtn().click();
 		
-		AddDoctorPage adp = new AddDoctorPage(driver);
-		docUsernameEdt.sendKeys(adp.docEmail);
+		docUsernameEdt.sendKeys(AddDoctorPage.docEmail);
 		docPasswordEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 5));
 		docLoginBtn.click();
 		

@@ -64,8 +64,9 @@ public class AddDoctorPage {
 	 * 
 	 * @throws Throwable
 	 */
-	
-	String docEmail;
+
+	public static String docEmail = null;
+
 	public void addDoctor() throws Throwable {
 		ExcelUtility eLib = new ExcelUtility();
 		WebDriverUtility wLib = new WebDriverUtility();
@@ -90,8 +91,8 @@ public class AddDoctorPage {
 		addressEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 1));
 		feeEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 2));
 		docContactEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 3));
-		docEmail = eLib.getDataFromExcel("addDoctor", 1, 4) + randomNum + "@lifelinkhospital.com";
-		docEmailEdt.sendKeys(docEmail);
+		String Email = eLib.getDataFromExcel("addDoctor", 1, 4) + randomNum + "@lifelinkhospital.com";
+		docEmailEdt.sendKeys(Email);
 		passwordEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 5));
 		cfpasswordEdt.sendKeys(eLib.getDataFromExcel("addDoctor", 1, 6));
 		submitBtn.click();
@@ -101,7 +102,8 @@ public class AddDoctorPage {
 		String actName = driver.findElement(By.xpath("//td[text()='" + docName + "']")).getText();
 		Assert.assertEquals(docName, actName);
 		Reporter.log(docName + " is successfully added", true);
-		System.out.println(docEmail);
+		System.out.println(Email);
+		docEmail = Email;
 	}
 
 }
